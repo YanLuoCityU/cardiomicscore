@@ -1,0 +1,67 @@
+{
+    "name": "OmicsNet",
+    "data_dir": "/your path/cardiomicscore/data/",
+    "model_dir": "/your path/cardiomicscore/saved/models/",
+    "log_dir": "/your path/cardiomicscore/saved/log/",
+    "results_dir": "/your path/cardiomicscore/saved/results/",
+    "predictor_set": "Metabolomics_no_statins",
+    "outcomes_list": ["cad", "stroke", "hf", "af", "pad", "vte"],
+    "model": {
+        "omics_input_dim": 168,
+        "shared_mlp_kwargs": {
+            "output_dim": 128,
+            "hidden_dims": [512, 256],
+            "dropout": 0.1,
+            "activation": "nn.ELU",
+            "final_activation": "nn.ELU",
+            "snn_init": false,
+            "dropout_fn": "nn.Dropout",
+            "norm_fn": "nn.BatchNorm1d",
+            "norm_layer": "all",
+            "input_norm": false,
+            "final_norm": true,
+            "final_dropout": true
+        },
+        "skip_connection_mlp_kwargs_default": {
+            "output_dim": 32,
+            "hidden_dims": [128, 64],
+            "dropout": 0.5,
+            "activation": "nn.ELU",
+            "final_activation": "nn.ELU",
+            "dropout_fn": "nn.Dropout",
+            "norm_fn": "nn.BatchNorm1d",
+            "norm_layer": "all",
+            "input_norm": false,
+            "final_norm": true,
+            "final_dropout": true
+        },
+        "predictor_mlp_kwargs_default": {
+            "output_dim": 1,
+            "hidden_dims": [64, 32],
+            "dropout": 0.5,
+            "activation": "nn.ELU",
+            "final_activation": null,
+            "dropout_fn": "nn.Dropout",
+            "norm_fn": "nn.BatchNorm1d",
+            "norm_layer": "all",
+            "input_norm": false,
+            "final_norm": false,
+            "final_dropout": false
+        }
+    },
+    "data_loader": {
+        "batch_size": {"train": 1024, "val": 1024},
+        "shuffle_train": true,
+        "num_workers": 16,
+        "seed_to_split": 250901
+    },
+    "trainer": {
+        "epochs": 50,
+        "early_stop": 10,
+        "optimizer": "Adam",
+        "lr": 1e-04,
+        "weight_decay": 0
+    },
+    "loss": {},
+    "seed": 1234
+}
