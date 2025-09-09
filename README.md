@@ -1,6 +1,6 @@
-# CardiOmicScore: An AI-based multiomics profiling for personalized prediction of cardiovascular disease in the UK Biobank"
+# AI-based multiomics profiling for personalized prediction of cardiovascular disease: A prospective UK Biobank study"
 
-Code for the paper "CardiOmicScore: An AI-based multiomics profiling for personalized prediction of cardiovascular disease in the UK Biobank". This repository contains Python and R codes for data preprocessing, model training and evaluations, model interpretation, and visualization. Our demo website can be found [here](https://yanluocityu.github.io/cardiomicscore-website/).
+Code for the paper "AI-based multiomics profiling for personalized prediction of cardiovascular disease: A prospective UK Biobank study". This repository contains Python and R codes for data preprocessing, model training and evaluations, model interpretation, and visualization. Our demo website can be found [here](https://yanluocityu.github.io/cardiomicscore-website/).
 
 ## Project Structure and Usage Guidance
 
